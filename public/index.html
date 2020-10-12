@@ -22,8 +22,13 @@
 
         socket.emit('mensaje', {nombre: 'felipe'});
 
-        socket.on('mensaje', function(payload) {
+        socket.on('nuevo-mensaje', function(payload) {
             console.log('MEnsaje desde el server: ', payload);
+        });
+
+        socket.on('active-bands', function(payload) {
+            console.clear();
+            console.table(payload);
         });
 
 
